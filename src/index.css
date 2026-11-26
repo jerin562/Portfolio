@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #05040A;
+    --bg-secondary: #0D0A16;
+    --accent-purple: #8B5CF6;
+    --accent-bright: #A855F7;
+    --accent-light: #C4B5FD;
+    --text-primary: #F8F7FC;
+    --text-muted: #9691A6;
+  }
+
+  html {
+    background-color: #05040A;
+    color: #F8F7FC;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #05040A;
+    color: #F8F7FC;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .font-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+.purple-text-gradient {
+  background: linear-gradient(135deg, #C4B5FD 0%, #A855F7 48%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.purple-radial-aura {
+  background: radial-gradient(
+    circle at center,
+    rgba(168, 85, 247, 0.34) 0%,
+    rgba(139, 92, 246, 0.16) 38%,
+    rgba(13, 10, 22, 0.04) 68%,
+    transparent 80%
+  );
+}
+
+.card-bottom-glow {
+  background: radial-gradient(
+    80% 55% at 50% 100%,
+    rgba(139, 92, 246, 0.18) 0%,
+    rgba(168, 85, 247, 0.06) 50%,
+    transparent 100%
+  );
+}
+
+.film-grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.032;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
